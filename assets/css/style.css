@@ -1,19 +1,12 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-areas:
-        "nav nav nav nav"
-        "aside main main main"
-        "footer footer footer footer";
-    min-height: 100vh;
+    background-color: rgb(223, 230, 243);
 }
 
 nav {
     grid-area: nav;
+    margin-top: 0;
 }
 
 h1 {
@@ -22,10 +15,13 @@ h1 {
     padding: 1%;
     text-align: center;
     font-size: large;
+    margin-top: 0;
 }
 
 aside {
     grid-area: aside;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -33,57 +29,80 @@ aside h2 {
     margin-left: 10px;
 }
 
-.categorias {
-    display: flex;
-    flex-direction: column;
+aside a {
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    text-decoration: none;
 }
 
-aside ul {
-    justify-content: start;
-    padding-left: 10px;
+aside span {
+    color: gray;
 }
 
-li {
-    margin-top: 5px;
-    margin-right: 0px;
-}
-
-main {
-    grid-area: main;
+section {
+    grid-area: section;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     gap: 20px;
-
+margin-right: 10px;
 }
 
 .producto {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}
+
+.producto h2 {
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
 .producto p {
     color: rgb(95, 92, 92);
 }
 
+
 img {
-    width: 200px;
-    height: 150px;
+    height: 200px;
+}
+
+.producto .boton {
+    margin: 0;
 }
 
 button {
     background-color: rgba(11, 12, 73, 0.811);
     color: white;
-    width: 280px;
+    width: 100%;
     height: 40px;
-    border-radius: 10px;
+    border: 0;
+    margin: 0;
 }
 
 footer {
     grid-area: footer;
+    background-color: white;
+    margin-top: 0;
+    padding: 1px;
 }
 
 h3 {
     color: gray;
     text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-areas:
+        "nav nav"
+        "aside section"
+        "footer footer";
+    min-height: 100vh;
 }
